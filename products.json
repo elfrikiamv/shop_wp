@@ -1,38 +1,38 @@
 [
     {
-      "precio": 500,
+      "precio": 22,
       "id": 1,
-      "title": "Café",
-      "thumbnailUrl": "https://picsum.photos/id/0/600"
+      "title": "Paquete 01",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     },
     {
-      "precio": 300,
+      "precio": 22,
       "id": 2,
-      "title": "Pizza",
-      "thumbnailUrl": "https://picsum.photos/id/10/600"
+      "title": "Paquete 02",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     },
     {
-      "precio": 100,
+      "precio": 22,
       "id": 3,
-      "title": "Agua",
-      "thumbnailUrl": "https://picsum.photos/id/20/600"
+      "title": "Paquete 03",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     },
     {
-      "precio": 50,
+      "precio": 22,
       "id": 4,
-      "title": "Sandía",
-      "thumbnailUrl": "https://picsum.photos/id/30/600"
+      "title": "Paquete 04",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     },
     {
-      "precio": 10,
+      "precio": 22,
       "id": 5,
-      "title": "Mango",
-      "thumbnailUrl": "https://picsum.photos/id/40/600"
+      "title": "Paquete 05",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     },
     {
-      "precio": 150,
+      "precio": 22,
       "id": 6,
-      "title": "Chela",
-      "thumbnailUrl": "https://picsum.photos/id/50/600"
+      "title": "Paquete 06",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     }
   ]

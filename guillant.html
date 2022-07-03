@@ -11,7 +11,6 @@
     <!-- contenedor del carrito de compras -->
     <div class="container">
       <h4>Carrito de compras</h4>
-      <!-- tabla del carrito de compras -->
       <table class="table">
         <thead>
           <tr>
@@ -22,10 +21,8 @@
             <th scope="col">Total</th>
           </tr>
         </thead>
-        <!-- aqui se meteran los elementos -->
         <tbody id="items"></tbody>
         <tfoot>
-          <!-- info del carrito vacio -->
           <tr id="footer">
             <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
           </tr>
@@ -34,7 +31,7 @@
       <h4>Cards</h4>
       <div class="row" id="cards"></div>
     </div>
-    <!-- template del footer -->
+
     <template id="template-footer">
         <th scope="row" colspan="2">Total productos</th>
         <td>10</td>
@@ -45,7 +42,7 @@
         </td>
         <td class="font-weight-bold">$ <span>5000</span></td>
     </template>
-    <!-- template del carrito de los productos -->
+    
     <template id="template-carrito">
       <tr>
         <th scope="row">id</th>

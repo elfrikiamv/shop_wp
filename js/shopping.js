@@ -1,3 +1,4 @@
+//trae los elementos del html
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -10,23 +11,26 @@ let carrito = {}
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', () => { fetchData() });
+//obtener los elementos de la card
 cards.addEventListener('click', e => { addCarrito(e) });
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
-// Traer productos
+// Traer items del .json
 const fetchData = async () => {
     const res = await fetch('products.json')
     const data = await res.json()
-    console.log(data)
+    //console.log(data)
     pintarCards(data)
 }
 
 // Pintar productos
 const pintarCards = data => {
     data.forEach(producto => {
+        //accede a los elentos del html y los pinta segun el .json
         templateCard.querySelector('h5').textContent = producto.title
         templateCard.querySelector('p').textContent = producto.precio
-        templateCard.querySelector('button').dataset.id = producto.id
+        //pone id dinamico al boton segun la card
+        templateCard.querySelector('.btn-dark').dataset.id = producto.id
         templateCard.querySelector('img').setAttribute('src', producto.thumbnailUrl)
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone)
@@ -37,31 +41,31 @@ const pintarCards = data => {
 // Agregar al carrito
 const addCarrito = e => {
     if (e.target.classList.contains('btn-dark')) {
-        // console.log(e.target.dataset.id)
-        // console.log(e.target.parentElement)
         setCarrito(e.target.parentElement)
     }
     e.stopPropagation()
 }
-
-const setCarrito = item => {
-    // console.log(item)
+// captura los elementos del add carrito y se guardan como objetos en set carrito
+const setCarrito = objeto => {
     const producto = {
-        title: item.querySelector('h5').textContent,
-        precio: item.querySelector('p').textContent,
-        id: item.querySelector('button').dataset.id,
+        title: objeto.querySelector('h5').textContent,
+        precio: objeto.querySelector('p').textContent,
+        id: objeto.querySelector('.btn-dark').dataset.id,
         cantidad: 1
     }
-    // console.log(producto)
+    //console.log(producto)
+     
+    //llama al objeto id del producto del carrito para +1 en cantidad
     if (carrito.hasOwnProperty(producto.id)) {
         producto.cantidad = carrito[producto.id].cantidad + 1
     }
 
     carrito[producto.id] = { ...producto }
-    
+    //console.log(carrito)
     pintarCarrito()
 }
 
+//pinta con los objetos del setcarrito los pinta en la tabla de carrito de compras
 const pintarCarrito = () => {
     items.innerHTML = ''
 
@@ -88,7 +92,7 @@ const pintarFooter = () => {
     
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
         `
         return
     }
