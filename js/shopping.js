@@ -10,7 +10,13 @@ let carrito = {}
 
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
-document.addEventListener('DOMContentLoaded', () => { fetchData() });
+document.addEventListener('DOMContentLoaded', () => { fetchData()
+    //lo guarda en el localStorage
+    if(localStorage.getItem('carritoC')){
+        carrito = JSON.parse(localStorage.getItem('carritoC'))
+        pintarCarrito()
+    }
+})
 //obtener los elementos de la card
 cards.addEventListener('click', e => { addCarrito(e) });
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
@@ -61,7 +67,8 @@ const setCarrito = objeto => {
     }
 
     carrito[producto.id] = { ...producto }
-    //console.log(carrito)
+    //vea que contiene los datos del carrito de compras
+    console.log(carrito)
     pintarCarrito()
 }
 
@@ -85,8 +92,10 @@ const pintarCarrito = () => {
     items.appendChild(fragment)
 
     pintarFooter()
+    //agarra del localStorage y lo pone de nuez en el carrito
+    localStorage.setItem('carritoC', JSON.stringify(carrito))   
 }
-
+//aparece o no el carrito de compra segun si tiene items o no
 const pintarFooter = () => {
     footer.innerHTML = ''
     
@@ -99,34 +108,34 @@ const pintarFooter = () => {
     
     // sumar cantidad y sumar totales
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
-
+    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio, 0)
+    //console.log(nPrecio)
+    //Pinta la cantidad y la suma de precios
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
 
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
-
     footer.appendChild(fragment)
 
-    const boton = document.querySelector('#vaciar-carrito')
-    boton.addEventListener('click', () => {
+    const btnVaciar = document.querySelector('#vaciar-carrito')
+    btnVaciar.addEventListener('click', () => {
         carrito = {}
         pintarCarrito()
     })
 
 }
-
+//btn de sumar o restar el # de productos
 const btnAumentarDisminuir = e => {
     // console.log(e.target.classList.contains('btn-info'))
+    //accion de aumentar
     if (e.target.classList.contains('btn-info')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
         carrito[e.target.dataset.id] = { ...producto }
         pintarCarrito()
     }
-
+    //dismuir items
     if (e.target.classList.contains('btn-danger')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad--
