@@ -4,8 +4,10 @@ const items = document.getElementById('items')
 const footer = document.getElementById('footer')
 const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
+const templatePedir = document.getElementById('template-btnpedir').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
+//donde se guardaran los items del carrito
 let carrito = {}
 
 // Eventos
@@ -67,8 +69,11 @@ const setCarrito = objeto => {
     }
 
     carrito[producto.id] = { ...producto }
-    //vea que contiene los datos del carrito de compras
-    console.log(carrito)
+    //wea que contiene los datos del carrito de compras
+    //converte objet to string
+    //const pedido_carrito = JSON.stringify(carrito);
+    //console.log(encodeURIComponent(pedido_carrito))
+
     pintarCarrito()
 }
 
@@ -124,7 +129,26 @@ const pintarFooter = () => {
         pintarCarrito()
     })
 
+    //logica del btn pedir
+    const clone2 = templatePedir.cloneNode(true)
+    fragment.appendChild(clone2)
+    footer.appendChild(fragment)
+
+    const btnPedir = document.querySelector('#pedir-carrito')
+    btnPedir.addEventListener('click', () => {
+        
+        //wea que contiene los datos del carrito de compras
+        //converte objet to string y saca el url
+        const pedido_carrito = JSON.stringify(carrito)
+        const pedido_wp = "https://api.whatsapp.com/send?phone=525576442493&text=" + encodeURIComponent(pedido_carrito)
+
+        window.open(pedido_wp, '_blank'); 
+        //console.log(pedido_wp)
+
+    })
+    
 }
+
 //btn de sumar o restar el # de productos
 const btnAumentarDisminuir = e => {
     // console.log(e.target.classList.contains('btn-info'))
