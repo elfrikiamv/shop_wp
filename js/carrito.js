@@ -1,6 +1,7 @@
 //trae los elementos del html
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
+const pedido = document.getElementById('btn-pedido')
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => { fetchData()
         carrito = JSON.parse(localStorage.getItem('carritoC'))
         pintarCarrito()
     }
+    pedir()
 })
 
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
@@ -20,7 +22,7 @@ items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 // Traer items del .json
 const fetchData = async () => {
     const res = await fetch('products.json')
-    const data = await res.json()
+    //const data = await res.json()
     //console.log(data)
     //pintarCards(data)
 }
@@ -46,7 +48,8 @@ const pintarCarrito = () => {
 
     pintarFooter()
     //agarra del localStorage y lo pone de nuez en el carrito
-    localStorage.setItem('carritoC', JSON.stringify(carrito))   
+    localStorage.setItem('carritoC', JSON.stringify(carrito))
+    pedir()   
 }
 //aparece o no el carrito de compra segun si tiene items o no
 const pintarFooter = () => {
@@ -101,4 +104,12 @@ const btnAumentarDisminuir = e => {
         pintarCarrito()
     }
     e.stopPropagation()
+}
+
+const pedir = () => {
+
+    const pedido_carrito = JSON.stringify(carrito)
+    const pedido_wp = "https://api.whatsapp.com/send?phone=525576442493&text=" + encodeURIComponent(pedido_carrito)
+
+    pedido.querySelector('a').setAttribute('href', pedido_wp)
 }

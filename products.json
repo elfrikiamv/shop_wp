@@ -34,5 +34,23 @@
       "id": 6,
       "title": "Paquete 06",
       "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
+    },
+    {
+      "precio": 22,
+      "id": 7,
+      "title": "Paquete 07",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
+    },
+    {
+      "precio": 22,
+      "id": 8,
+      "title": "Paquete 08",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
+    },
+    {
+      "precio": 22,
+      "id": 9,
+      "title": "Paquete 09",
+      "thumbnailUrl": "https://i.imgur.com/ULPPq8U.jpeg"
     }
   ]
