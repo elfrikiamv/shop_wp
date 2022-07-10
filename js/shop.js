@@ -27,9 +27,9 @@ const pintarCards = data => {
     data.forEach(producto => {
         //accede a los elentos del html y los pinta segun el .json
         templateCard.querySelector('h5').textContent = producto.title
-        templateCard.querySelector('p').textContent = producto.precio
+        templateCard.querySelector('span').textContent = producto.precio
         //pone id dinamico al boton segun la card
-        templateCard.querySelector('.btn-dark').dataset.id = producto.id
+        templateCard.querySelector('.btn-light').dataset.id = producto.id
         templateCard.querySelector('img').setAttribute('src', producto.thumbnailUrl)
 
         const clone = templateCard.cloneNode(true)
@@ -40,7 +40,7 @@ const pintarCards = data => {
 
 // Agregar al carrito
 const addCarrito = e => {
-    if (e.target.classList.contains('btn-dark')) {
+    if (e.target.classList.contains('btn-light')) {
         setCarrito(e.target.parentElement)
     }
     e.stopPropagation()
@@ -49,8 +49,8 @@ const addCarrito = e => {
 const setCarrito = objeto => {
     const producto = {
         title: objeto.querySelector('h5').textContent,
-        precio: objeto.querySelector('p').textContent,
-        id: objeto.querySelector('.btn-dark').dataset.id,
+        precio: objeto.querySelector('span').textContent,
+        id: objeto.querySelector('.btn-light').dataset.id,
         cantidad: 1
     }
     //console.log(producto)
