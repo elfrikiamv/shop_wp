@@ -5,6 +5,10 @@
     max-height: 90vh;
     object-fit: cover;
 }
+#carousel-carrito .carousel-inner img {
+    max-height: 42vh;
+    object-fit: cover;
+}
 #card-container p {
     color: rgb(255, 255, 255);
 }
@@ -12,7 +16,10 @@
     background-color: #111112;
     color: rgb(255, 255, 255);
 }
-
+#footer-carrito {
+    background-color: #111112;
+    color: rgb(255, 255, 255); 
+}
 #productos-card {
     background-color: #242526;
     color: rgb(255, 255, 255);
@@ -23,8 +30,14 @@
 #carrito-text {
     color: rgb(255, 255, 255);
 }
+#color-text {
+    color: rgb(255, 255, 255);
+}
+#table-container{
+    background-color: #242526;
+}
 /*
-#productos-card img {
+#productos-card img { table-container
 
     /* width: 80px; * /
     height: 80px; #242526
