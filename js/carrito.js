@@ -38,8 +38,8 @@ const pintarCarrito = () => {
         templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
         
         //botones
-        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
-        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-outline-success').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-outline-danger').dataset.id = producto.id
 
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
@@ -57,7 +57,7 @@ const pintarFooter = () => {
     
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+        <th scope="row" colspan="5">¡Carrito de compras vacío, agrega artículos a la lista!</th>
         `
         return
     }
@@ -86,14 +86,14 @@ const pintarFooter = () => {
 const btnAumentarDisminuir = e => {
     // console.log(e.target.classList.contains('btn-info'))
     //accion de aumentar
-    if (e.target.classList.contains('btn-info')) {
+    if (e.target.classList.contains('btn-outline-success')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
         carrito[e.target.dataset.id] = { ...producto }
         pintarCarrito()
     }
     //dismuir items
-    if (e.target.classList.contains('btn-danger')) {
+    if (e.target.classList.contains('btn-outline-danger')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad--
         if (producto.cantidad === 0) {
@@ -105,11 +105,35 @@ const btnAumentarDisminuir = e => {
     }
     e.stopPropagation()
 }
-
+//btn pedir
 const pedir = () => {
-
+    //pasa carrito a string
     const pedido_carrito = JSON.stringify(carrito)
-    const pedido_wp = "https://api.whatsapp.com/send?phone=525576442493&text=" + encodeURIComponent(pedido_carrito)
 
+    const remplace1 = /{/ig
+    const pedido_clean1 = pedido_carrito.replace(remplace1, " /")
+
+    const remplace2 = /}/ig
+    const pedido_clean2 = pedido_clean1.replace(remplace2, "/ ")
+
+    const remplace3 = /"/ig
+    const pedido_clean3 = pedido_clean2.replace(remplace3, "")
+    
+    const remplace4 = /title:/ig
+    const pedido_clean4 = pedido_clean3.replace(remplace4, "Nombre del pack: ")
+
+    const remplace5 = /precio:/ig
+    const pedido_clean5 = pedido_clean4.replace(remplace5, "Precio c/p: ")
+
+    const remplace6 = /id:/ig
+    const pedido_clean6 = pedido_clean5.replace(remplace6, "Id: ")
+
+    const remplace7 = /cantidad:/ig
+    const pedido_clean7 = pedido_clean6.replace(remplace7, "Cantidad: ")
+
+    //el string de carrito se hace encodeURI mas el link de wp numero
+    const msg_wp = "https://api.whatsapp.com/send?phone=525576442493&text=Hola%2c+buen+d%c3%ada%2c+quiero+comprar+los+siguientes+art%c3%adculos%3a+"
+    const pedido_wp = msg_wp + encodeURIComponent(pedido_clean7)
+    //pone el enlace completo en el btn pedido
     pedido.querySelector('a').setAttribute('href', pedido_wp)
 }
