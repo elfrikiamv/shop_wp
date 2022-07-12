@@ -42,6 +42,11 @@
     -moz-box-shadow: 0px 0px 22px 0px rgba(255,255,255,0.22);
     box-shadow: 0px 0px 22px 0px rgba(255,255,255,0.22);
 }
+#btn-glow-wp {
+    -webkit-box-shadow:0px 0px 22px 0px rgba(37,211,101,0.9);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(37,211,101,0.9);
+    box-shadow: 0px 0px 22px 0px rgba(37,211,101,0.9);
+}
 #txt-glow {
     text-shadow: rgba(255,255,255,1) 0px 0px 13px;
 }
@@ -65,10 +70,14 @@
     color: rgb(255, 255, 255);
     text-shadow: rgba(255,255,255,1) 0px 0px 13px;
 }
+#txt-glow-wp {
+    color: #25D366;
+    text-shadow: rgba(37,211,101,1) 0px 0px 13px;
+}
 /*
 #productos-card img { table-container
 
-    /* width: 80px; * /
+    /* width: 80px; * / #00A884
     height: 80px; #242526
 
 }
