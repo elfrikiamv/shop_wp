@@ -1,0 +1,84 @@
+#body {
+    background-color: #18191A;
+}
+#carousel .carousel-inner img {
+    max-height: 90vh;
+    object-fit: cover;
+}
+#carrousel-carrito .carousel-inner img {
+    max-height: 42vh;
+    object-fit: cover;
+}
+#card-container p {
+    color: rgb(255, 255, 255);
+}
+#footer-home {
+    background-color: #111112;
+    color: rgb(255, 255, 255);
+}
+#footer-carrito {
+    background-color: #111112;
+    color: rgb(255, 255, 255); 
+}
+#productos-card {
+    background-color: #242526;
+    color: rgb(255, 255, 255);
+}
+#divisor {
+    color: rgb(255, 255, 255);
+}
+#carrito-text {
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(255,255,255,1) 0px 0px 13px;
+}
+#color-text {
+    color: rgb(255, 255, 255);
+}
+#table-container {
+    background-color: #242526;
+}
+#btn-glow {
+    -webkit-box-shadow:0px 0px 22px 0px rgba(255,255,255,0.22);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(255,255,255,0.22);
+    box-shadow: 0px 0px 22px 0px rgba(255,255,255,0.22);
+}
+#btn-glow-wp {
+    -webkit-box-shadow:0px 0px 22px 0px rgba(37,211,101,0.9);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(37,211,101,0.9);
+    box-shadow: 0px 0px 22px 0px rgba(37,211,101,0.9);
+}
+#txt-glow {
+    text-shadow: rgba(255,255,255,1) 0px 0px 13px;
+}
+#txt-glow-nuestros-roductos {
+    font-size: 30px;
+    text-shadow: rgba(255,255,255,1) 0px 0px 13px;
+}
+#txt-glow-logo {
+    color: #f3e3eb;
+    font-size: 22px;
+    text-shadow: 0px 0px 10px #f82d97, 0px 0px 20px #c501e2, 0px 0px 30px #f82d97, 0px 0px 40px #c501e2, 0px 0px 50px #f82d97, 0px 0px 60px #c501e2, 0px 0px 70px #f82d97;
+}
+#txt-glow-nav {
+    text-shadow: rgba(255,255,255,1) 0px 0px 13px;
+}
+#txt-glow-pack {
+    color: #f82d97;
+    text-shadow: rgba(248,45,150,1) 0px 0px 13px;
+}
+#txt-redes {
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(255,255,255,1) 0px 0px 13px;
+}
+#txt-glow-wp {
+    color: #25D366;
+    text-shadow: rgba(37,211,101,1) 0px 0px 13px;
+}
+/*
+#productos-card img { table-container
+
+    /* width: 80px; * / #00A884
+    height: 80px; #242526
+
+}
+*/
