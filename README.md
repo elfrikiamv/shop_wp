@@ -1,79 +1,36 @@
-<a name="readme-top"></a>
-
-<!-- PROJECT SHIELDS -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<!-- PROJECT LOGO -->
-<br />
 <p align="center">
-  <h3 align="center">Shop_wp</h3>
-  <p align="center">
-    Send Your Shopping List via WhatsApp with Shop_wp!
-    <br />
-    <a href="https://github.com/elfrikiamv/shop_wp"><strong>Explore the Documentation »</strong></a>
-    <br />
-    <br />
-    <a href="http://elfrikiamv.tech/shop-wp/">View Demo</a>
-    ·
-    <a href="https://github.com/elfrikiamv/shop_wp/issues/">Report Bug</a>
-  </p>
+  <img height="92" alt="elfrikiamv-logo" src="https://elfrikiamv.com/media/img/logo-elfrikiamv-dev-light-en-horizontal.webp">
 </p>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+<img align="right" width="342" height="850" alt="purple waves" src="https://elfrikiamv.com/media/img/bg-purple-wave.webp"/>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<p align="start">
+  <img height="128" alt="logo-shop-wp" src="https://elfrikiamv.com/media/img/logo-shop-wp.webp"/>
+  
+</p>
+<a href="http://elfrikiamv.com/shop-wp/">View Demo</a>
+    ·
+<a href="https://github.com/elfrikiamv/shop_wp/issues/">Report Bug</a>
+<div>
+
+## Shop_wp.
 
 Shop_wp is a web project that allows users to conveniently send their shopping list via WhatsApp messages. With a user-friendly interface, users can create their shopping list on the website and send it directly through WhatsApp messages.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Built With.
 
-### Built With
+- HTML.
+- Javascript.
+- CSS.
+- JSON.
 
-Shop_wp is built using the following technologies:
+## License.
 
-* HTML - A markup language for creating web pages.
-* Javascript - A programming language for enhancing interactivity on web pages.
-* CSS - A stylesheet language for styling web pages.
-* JSON - A lightweight data-interchange format.
+Distributed under the GNU General Public License v3.0
+See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Contact.
 
-<!-- LICENSE -->
-## License
-
-Shop_wp is licensed under the GNU General Public License v3.0. For more details, please see the `LICENSE` file.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-## Contact
-
-For any inquiries or collaboration opportunities, please feel free to reach out:
-
-* LinkedIn - [@elfrikiamv](https://www.linkedin.com/in/elfrikiamv/)
-* Email - contacto.elfrikiamv@gmail.com
-
-Project Link: [https://github.com/elfrikiamv/shop_wp](https://github.com/elfrikiamv/shop_wp)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/elfrikiamv/
-
-
-
-
+- Linkedin - **_[@elfrikiamv](https://www.linkedin.com/in/elfrikiamv/)_**.
+- Email - **_contact@elfrikiamv.com_**.
+- My website - **_[elfrikiamv.com](https://elfrikiamv.com)_**.
